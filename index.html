@@ -86,9 +86,12 @@
             outline: none;
         }
 
-        .logo:focus {
+        .logo:focus,
+        .logo:active,
+        .logo:hover {
             outline: none;
             box-shadow: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .header-actions {
@@ -426,7 +429,7 @@
         <footer>
             <div class="footer-content">
                 <div class="copyright">
-                    &copy; 2026 GSlider Blocks. All rights reserved.
+                    &copy; 2026 <a href="/" style="color: inherit; text-decoration: none;">GSlider Blocks</a>. All rights reserved.
                 </div>
                 <div class="social-links" style="gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
                     <a href="https://facebook.com/gsliderblocks" target="_blank" class="social-link">Facebook</a>
