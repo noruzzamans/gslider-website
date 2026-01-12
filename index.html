@@ -74,9 +74,48 @@
             -webkit-text-fill-color: transparent;
             text-decoration: none;
             cursor: pointer;
+            outline: none;
         }
 
-        /* Hero Section */
+        .logo:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .header-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .header-btn-primary {
+            background: white;
+            color: var(--dark);
+        }
+
+        .header-btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .header-btn-secondary {
+            color: var(--text-gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-btn-secondary:hover {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
         .hero {
             flex: 1;
             display: flex;
@@ -264,6 +303,14 @@
                 GSlider Blocks
             </a>
 
+            <div class="header-actions">
+                <a href="mailto:gsliderblocks@gmail.com" class="header-btn header-btn-secondary">
+                    Contact
+                </a>
+                <a href="https://wordpress.org/plugins/gslider-blocks" class="header-btn header-btn-primary">
+                    Download Plugin
+                </a>
+            </div>
         </header>
 
         <section class="hero">
