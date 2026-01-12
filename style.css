@@ -1,0 +1,368 @@
+:root {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --secondary: #10B981;
+    --dark: #0F172A;
+    --light: #F8FAFC;
+    --text-gray: #64748B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--dark);
+    color: white;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 25%);
+}
+
+.container {
+    max-width: 1600px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
+.logo {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, white 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.logo:focus,
+.logo:active,
+.logo:hover {
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.header-btn-primary {
+    background: white;
+    color: var(--dark);
+}
+
+.header-btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.header-btn-secondary {
+    color: var(--text-gray);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-btn-secondary:hover {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+    flex-direction: column;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-family: 'Clash Display', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, white 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Features Grid */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 6rem;
+    text-align: left;
+    width: 100%;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.feature-title {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.feature-desc {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+    padding: 4rem 0 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.copyright {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: white;
+}
+
+/* Tablet & Smaller */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Mobile View Improvements (375px focused) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+        /* User requested 15px padding */
+        width: 100%;
+    }
+
+    header {
+        padding: 1rem 0;
+    }
+
+    .header-actions {
+        gap: 0.5rem;
+    }
+
+    .header-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+        /* Reduced hero text font size for mobile */
+        line-height: 1.2;
+    }
+
+    p.subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-top: 3rem;
+    }
+
+    .feature-card {
+        padding: 1.25rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .copyright {
+        order: 2;
+    }
+
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.15rem;
+    }
+
+    .header-btn-secondary {
+        display: none;
+        /* Stay hidden on small screens */
+    }
+
+    .header-btn-primary {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* Even smaller for very small screens */
+    }
+}
