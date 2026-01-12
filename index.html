@@ -201,6 +201,43 @@
             .hero { padding: 2rem 0; }
             .features { grid-template-columns: 1fr; }
         }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .social-link:hover {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -252,6 +289,19 @@
                 </div>
             </div>
         </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="copyright">
+                    &copy; 2026 GSlider Blocks. All rights reserved.
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="https://github.com/noruzzamans/gslider-blocks" class="social-link">GitHub</a>
+                    <a href="mailto:gsliderblocks@gmail.com" class="social-link">Contact</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
