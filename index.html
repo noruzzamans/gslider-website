@@ -45,13 +45,10 @@
             background: 
                 radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 25%);
-        }
-
         .container {
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 0 2rem;
             width: 100%;
+            margin: 0 auto;
+            padding: 0 4rem;
         }
 
         /* Header */
@@ -59,16 +56,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.5rem 4rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            background: rgba(15, 23, 42, 0.75); /* Matches --dark theme color better */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(0, 0, 0, 0.4);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            margin: 0 -2rem;
-            width: calc(100% + 4rem);
+            width: 100%;
+        }
+
+        /* Wrapper to keep header content within content width if needed, or just align with padding */
+        .header-inner {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -98,9 +102,9 @@
         }
 
         .header-btn {
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.25rem;
             border-radius: 9999px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
             text-decoration: none;
             transition: all 0.2s;
@@ -125,15 +129,15 @@
             color: white;
             border-color: rgba(255, 255, 255, 0.3);
         }
+
         /* Mobile Header */
         @media (max-width: 640px) {
-            header { padding: 1rem; }
-            .header-btn span { display: none; } /* Hide text, show only icon? No icon here yet. Let's just reduce padding/size */
+            header, .container { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .header-btn span { display: none; }
             .header-btn {
                 padding: 0.5rem 0.8rem;
                 font-size: 0.85rem;
             }
-            /* Hide Contact on very small screens to save space */
             .header-btn-secondary { display: none; }
         }
 
@@ -141,85 +145,53 @@
             flex: 1;
             display: flex;
             align-items: center;
-            padding: 6rem 0;
+            padding: 8rem 0 6rem;
             flex-direction: column;
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
 
         .badge {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 9999px;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             color: #e2e8f0;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             backdrop-filter: blur(10px);
         }
 
         h1 {
             font-family: 'Clash Display', sans-serif;
-            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-size: clamp(4rem, 9vw, 7rem);
             font-weight: 600;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            line-height: 1.05;
+            margin-bottom: 2rem;
             background: linear-gradient(135deg, white 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
         }
 
         p.subtitle {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             color: var(--text-gray);
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto 3rem;
-        }
-
-
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            border-radius: 9999px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--dark);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+            line-height: 1.7;
         }
 
         /* Features Grid */
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 6rem;
             text-align: left;
             width: 100%;
@@ -314,8 +286,8 @@
 <body>
     <div class="gradient-bg"></div>
 
-    <div class="container">
-        <header>
+    <header>
+        <div class="header-inner">
             <a href="/" class="logo">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                 GSlider Blocks
@@ -329,7 +301,10 @@
                     Download Plugin
                 </a>
             </div>
-        </header>
+        </div>
+    </header>
+
+    <div class="container">
 
         <section class="hero">
             <div class="hero-content">
