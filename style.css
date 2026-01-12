@@ -121,7 +121,8 @@ header {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 6rem 0;
+    padding: 6rem 0 4rem;
+    /* Reduced bottom padding from 6rem to 4rem */
     flex-direction: column;
 }
 
@@ -239,7 +240,8 @@ footer {
     padding: 4rem 0 2rem;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 4rem;
+    margin-top: 2rem;
+    /* Reduced from 4rem */
 }
 
 .footer-content {
@@ -304,7 +306,8 @@ footer {
     }
 
     .hero {
-        padding: 3rem 0;
+        padding: 3rem 0 1.5rem;
+        /* Further reduced for mobile */
     }
 
     h1 {
@@ -343,6 +346,11 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
         order: 1;
+    }
+
+    footer {
+        margin-top: 1rem;
+        padding: 2rem 0;
     }
 }
 
