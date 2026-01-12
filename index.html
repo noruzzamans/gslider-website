@@ -48,13 +48,12 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             width: 100%;
         }
 
-        /* Header */
         /* Header */
         header {
             display: flex;
@@ -142,11 +141,12 @@
             flex: 1;
             display: flex;
             align-items: center;
-            padding: 4rem 0;
+            padding: 6rem 0;
+            flex-direction: column;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
@@ -165,7 +165,7 @@
 
         h1 {
             font-family: 'Clash Display', sans-serif;
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(3.5rem, 8vw, 6rem);
             font-weight: 600;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -219,9 +219,10 @@
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 4rem;
+            gap: 2rem;
+            margin-top: 6rem;
             text-align: left;
+            width: 100%;
         }
 
         @media (max-width: 1024px) {
