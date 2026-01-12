@@ -55,11 +55,21 @@
         }
 
         /* Header */
+        /* Header */
         header {
-            padding: 2rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(10, 10, 10, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 0 -2rem;
+            width: calc(100% + 4rem);
         }
 
         .logo {
@@ -116,6 +126,18 @@
             color: white;
             border-color: rgba(255, 255, 255, 0.3);
         }
+        /* Mobile Header */
+        @media (max-width: 640px) {
+            header { padding: 1rem; }
+            .header-btn span { display: none; } /* Hide text, show only icon? No icon here yet. Let's just reduce padding/size */
+            .header-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.85rem;
+            }
+            /* Hide Contact on very small screens to save space */
+            .header-btn-secondary { display: none; }
+        }
+
         .hero {
             flex: 1;
             display: flex;
@@ -159,12 +181,7 @@
             margin: 0 auto 3rem;
         }
 
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+
 
         .btn {
             display: inline-flex;
@@ -322,14 +339,7 @@
                     100% Free, lightweight, and built for performance.
                 </p>
                 
-                <div class="cta-group">
-                    <a href="https://wordpress.org/plugins/gslider-blocks" class="btn btn-primary">
-                        Download Plugin
-                    </a>
-                    <a href="mailto:gsliderblocks@gmail.com" class="btn btn-secondary">
-                        Contact Us
-                    </a>
-                </div>
+
 
                 <div class="features">
                     <!-- Base Slider -->
