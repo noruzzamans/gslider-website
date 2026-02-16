@@ -13,6 +13,15 @@
         href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0542CPLHH6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0542CPLHH6');
+    </script>
 </head>
 
 <body>
@@ -34,7 +43,7 @@
                 <a href="mailto:gsliderblocks@gmail.com" class="header-btn header-btn-secondary">
                     Contact
                 </a>
-                <a href="https://wordpress.org/plugins/gslider-blocks" class="header-btn header-btn-primary">
+                <a href="https://wordpress.org/plugins/gslider-blocks" id="download-btn" class="header-btn header-btn-primary">
                     Download Plugin
                 </a>
             </div>
@@ -161,6 +170,16 @@
             </div>
         </footer>
     </div>
+
+    <!-- Download Button Click Tracking -->
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function() {
+            gtag('event', 'download_click', {
+                event_category: 'engagement',
+                event_label: 'plugin_download'
+            });
+        });
+    </script>
 </body>
 
 </html>
